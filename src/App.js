@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useRef } from "react";
+import  CreateAccountPage from './pages/CreateAccountPage/CreateAccountPage';
 import './App.css';
-import './pages/LoginPage/LoginPage'
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/" element={<CreateAccountPage />} />
         
       </Routes>
     </div>
