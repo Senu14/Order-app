@@ -44,7 +44,7 @@ button {
 }
 
 .register-button {
-    margin-top: 50px;
+    margin-top: 10px;
     padding: 10px 10px;
     background-color: #D2B48C;
     // border: none;
@@ -79,3 +79,18 @@ span {
     text-decoration: underline;
     text-decoration-color: #8A8635;
 }
+
+.register-txt{
+    margin-top: 30%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    color: red;
+  }
+  

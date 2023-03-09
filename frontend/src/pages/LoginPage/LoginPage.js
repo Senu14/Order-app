@@ -11,8 +11,12 @@ const LoginPage = () => {
         setUsernameError("");
         setPasswordError("");
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (username === "") {
             setUsernameError("The email is required");
+        } else if (!emailRegex.test(username)) {
+            setUsernameError("Invalid email format");
         }
 
         if (password === "") {
@@ -25,34 +29,40 @@ const LoginPage = () => {
     return (
         <>
             <style>{'body {  background-color: #F4E9D6 }'}</style>
-            <h1 style={{textAlign: "center"}} className="txt">You are welcome!</h1>
-            <img src="/images/logo.png" alt="Logo" className="img"/>
+            <h1 style={{ textAlign: "center" }} className="txt">You are welcome!</h1>
+            <img src="/images/logo.png" alt="Logo" className="img" />
             <form onSubmit={handleSubmit}>
                 <div>
-                    {/* <label htmlFor="username">Email:</label> */}
-                    <input
-                    placeholder="Email"
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(event) => setUsername(event.target.value)}
-                    />
-                    {usernameError && <span style={{ color: "red" }}>{usernameError}</span>}
+                    <label htmlFor="username">Email:</label>
+                    <div className="input-container">
+                        <input
+                            placeholder="Email"
+                            type="text"
+                            id="username"
+                            value={username}
+                            onChange={(event) => setUsername(event.target.value)}
+                        />
+                        {usernameError && <span className="error">{usernameError}</span>}
+                    </div>
                 </div>
 
                 <div>
-                    {/* <label htmlFor="password">Password:</label> */}
-                    <input placeholder="Password"
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)}
-                    />
-                    {passwordError && <span style={{ color: "red" }}>{passwordError}</span>}
+                    <label htmlFor="password">Password:</label>
+                    <div className="input-container">
+                        <input
+                            placeholder="Password"
+                            type="password"
+                            id="password"
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
+                        />
+                        {passwordError && <span className="error">{passwordError}</span>}
+                    </div>
                 </div>
 
                 <button type="submit">Login</button>
 
+                <p className="register-txt">I do not have account</p>
                 <button className="register-button" type="submit">Register</button>
             </form>
         </>
