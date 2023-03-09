@@ -1,0 +1,18 @@
+CreateAccountPage{
+   display: flex;  
+   flex-direction: column; 
+}
+form{
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+     width: 50%;
+     background: #E9C891
+}
+input{
+   padding: 10px; 
+   border: none;
+   border-top-width: 2px;
+   border-top-style: solid;
+   
+}
