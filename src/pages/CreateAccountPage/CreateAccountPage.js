@@ -3,9 +3,9 @@ import React from 'react'
 const  CreateAccountPage = () => {
   return (
 
-    <div>CreateAccountPage
+    <h1>CreateAccountPage
 
-    </div>
+    <h1>
   )
 }
 
