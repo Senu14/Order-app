@@ -1,16 +1,15 @@
-
 import './App.css';
-import Header from './components/Header';
-import AppRouter from './components/AppRouter/AppRouter';
+import CreateAccountPage from './pages/CreateAccountPage/CreateAccountPage';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
   return (
     <>
-
-    <Header>
-    </Header>
-    <AppRouter/>
+    <Routes>
+      <Route path="/" element={<CreateAccountPage />} />
+                
+    </Routes>
 
     </>
   );
