@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { BsPersonCircle } from 'react-icons/bs'
 import "./Header.css";
 
-var Button = require('react-button')
+
 
 function Header() {
   const navRef = useRef();
