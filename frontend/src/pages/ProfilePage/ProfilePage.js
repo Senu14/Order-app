@@ -14,7 +14,7 @@ const ProfilePage = () => {
 
             <p className="username">Paco</p>
             
-            <p className="settings">Settings</p>
+            <p className="username">Settings</p>
             
 
             <div className="logout">

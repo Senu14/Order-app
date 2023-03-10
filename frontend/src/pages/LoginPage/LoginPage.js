@@ -23,7 +23,6 @@ const LoginPage = () => {
             setPasswordError("The password is required.");
         }
 
-        // Si los campos son válidos, puedes enviar el formulario aquí.
     };
 
     return (
@@ -33,7 +32,7 @@ const LoginPage = () => {
             <img src="/images/logo.png" alt="Logo" className="img" />
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="username">Email:</label>
+                    {/* <label htmlFor="username">Email:</label> */}
                     <div className="input-container">
                         <input className="log-input"
                             placeholder="Email"
@@ -47,7 +46,7 @@ const LoginPage = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="password">Password:</label>
+                    {/* <label htmlFor="password">Password:</label> */}
                     <div className="input-container">
                         <input className="log-input"
                             placeholder="Password"
@@ -60,7 +59,7 @@ const LoginPage = () => {
                     </div>
                 </div>
 
-                <button classname="login-buton" type="submit">Login</button>
+                <button classname="login-button" type="submit">Login</button>
 
                 <p className="register-txt">I do not have account</p>
                 <button className="register-button" type="submit">Register</button>
