@@ -1,12 +1,24 @@
 
 body {
-    background-color: ;
+    background-color: #F4E9D6 ;
+}
+
+.shopping-content {
+    display: block;
+    align-items: center;
 }
 
 
 
 
 .underline{
+    margin-top: 20px;
     text-decoration: underline;
     text-decoration-color: #8A8635 ;
+}
+
+.shopping {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around
 }
