@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ProfilePage.scss";
+import "./AddMenuPage.scss";
 import { BiLogOut } from 'react-icons/bi';
 const AddMenuPage = () => {
 
