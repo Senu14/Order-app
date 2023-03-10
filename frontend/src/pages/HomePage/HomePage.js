@@ -15,34 +15,34 @@ const HomePage = () => {
     return (
         <>
           <div className="homepage">
-            <button >Add menu item
+            <button className="buttonhomepage">Add menu item
               <div className="icon">
                 <BiChevronRight/>
               </div>
             </button>
 
-            <button >Create order
-              <div className="icon">
-                <BiChevronRight/>
-              </div>
-            </button>
-
-
-            <button >Shopping list
+            <button className="buttonhomepage">Create order
               <div className="icon">
                 <BiChevronRight/>
               </div>
             </button>
 
 
-            <button >Menu
+            <button className="buttonhomepage">Shopping list
+              <div className="icon">
+                <BiChevronRight/>
+              </div>
+            </button>
+ 
+
+            <button className="buttonhomepage">Menu
               <div className="icon">
                 <BiChevronRight/>
               </div>
             </button>
 
 
-            <button >Contact us
+            <button className="buttonhomepage">Contact us
               <div className="icon">
                 <BiChevronRight/>
               </div>

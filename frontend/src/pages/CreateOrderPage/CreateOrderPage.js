@@ -15,7 +15,7 @@ const CreateOrderPage = () => {
         <div className="days">
           <p>Create order for 
             <form action="">
-              <input type="number"  />
+              <input className="input-create" type="number"  />
             </form>
             day(s)
           </p>
@@ -35,7 +35,7 @@ const CreateOrderPage = () => {
           </select>
  
           <form action="">
-              <input type="number"  />
+              <input className="input-create"  type="number"  />
           </form>
           </div>
           <div>
@@ -53,7 +53,7 @@ const CreateOrderPage = () => {
     </div>*/}
 
         <div>
-          <button >Create and go to shopping list
+          <button className="button-create">Create and go to shopping list
               <div className="icon">
                 <BiChevronRight/>
               </div>

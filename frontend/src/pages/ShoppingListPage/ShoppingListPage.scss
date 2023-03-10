@@ -3,21 +3,18 @@ body {
     background-color: #F4E9D6 ;
 }
 
-.shopping-content {
+.shopping-container {
     display: block;
     align-items: center;
 }
 
-
-
-
-.underline{
+.underline-shop{
     margin-top: 20px;
     text-decoration: underline;
     text-decoration-color: #8A8635 ;
 }
 
-.shopping {
+.shopping-a {
     display: flex;
     flex-direction: row;
     justify-content:space-around

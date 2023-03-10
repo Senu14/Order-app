@@ -10,11 +10,11 @@ import './ShoppingListPage.scss';
 const ShoppingListPage = () => {
     return (  
         <>
-        <div className="shopping-content">
+        <div className="shopping-container">
 
-          <p className="underline">SHOPPING LIST</p>
+          <p className="underline-shop">SHOPPING LIST</p>
 
-          <div className="shopping">
+          <div className="shopping-a">
             <p>Name</p>
             <p>Ingredients</p>
             <p>Qty</p>
