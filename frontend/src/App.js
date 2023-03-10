@@ -1,15 +1,17 @@
-import { Routes, Route } from "react-router-dom";
-import React, { useState, useRef } from "react";
 import './App.css';
-import LoginPage from './pages/LoginPage/LoginPage'
+import CreateAccountPage from './pages/CreateAccountPage/CreateAccountPage';
+import { Route, Routes } from 'react-router-dom';
+
+
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        
-      </Routes>
-    </div>
+    <>
+    <Routes>
+      <Route path="/" element={<CreateAccountPage />} />
+                
+    </Routes>
+
+    </>
   );
 };
 
