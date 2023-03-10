@@ -1,27 +1,43 @@
 import React, { useState } from "react";
 import "./AddMenuPage.scss";
-import { BiLogOut } from 'react-icons/bi';
+import Header from '../../components/Header'
+import { BiChevronRight } from 'react-icons/bi';
 const AddMenuPage = () => {
 
     return (
         <>
-            <style>{'body {  background-color: #F4E9D6 }'}</style>
-            <img src="/images/background.png" alt="background-logo" className="background-logo" />
-            <button className="close-button">x</button>
-            <div class="imagen-container">
-                <img src="/images/profile.png" alt="Perfil" className="profile-image" />
+        <Header/>
+            <p className="line-add">ADD DISH</p>
+
+            <div className="average">
+                <div className="name-sales">
+                    <p>Name</p>
+                </div>
+
+                <div className="menu-item">
+                    <select>
+                        <option value="Orange">Burger</option>
+                        <option value="Radish">Fish and Chips</option>
+                    </select>
+
+                    <form action="">
+                        <input className="input-create" type="number" />
+                    </form>
+                </div>
+                <div>
+                    <button className="add">Add</button>
+                </div>
             </div>
 
-            <p className="username">Paco</p>
-            
-            <p className="settings">Settings</p>
-            
-
-            <div className="logout">
-                <BiLogOut className="i" />
+            <div>
+                <button className="button-create">Create and go to shopping list
+                    <div className="icon">
+                        <BiChevronRight />
+                    </div>
+                </button>
             </div>
-            
         </>
+
     );
 };
 
