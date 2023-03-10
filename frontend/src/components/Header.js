@@ -31,6 +31,7 @@ function Header() {
         <BsPersonCircle />
       </button>
     </header>
+
   )
 }
 
