@@ -23,14 +23,15 @@ label {
     margin-bottom: 5px;
 }
 
-input {
+.log-input {
+    width: 100px;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border-color: #4B480A;
 }
 
-button {
+.login-buton {
     margin-top: 30px;
     padding: 10px 20px;
     background-color: #D2B48C;
@@ -93,4 +94,3 @@ span {
   .error {
     color: red;
   }
-  

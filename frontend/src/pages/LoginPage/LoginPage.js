@@ -29,13 +29,13 @@ const LoginPage = () => {
     return (
         <>
             <style>{'body {  background-color: #F4E9D6 }'}</style>
-            <h1 style={{ textAlign: "center" }} className="txt">You are welcome!</h1>
+            <h1 classname="logintext" style={{ textAlign: "center" }} className="txt">You are welcome!</h1>
             <img src="/images/logo.png" alt="Logo" className="img" />
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">Email:</label>
                     <div className="input-container">
-                        <input
+                        <input className="log-input"
                             placeholder="Email"
                             type="text"
                             id="username"
@@ -49,7 +49,7 @@ const LoginPage = () => {
                 <div>
                     <label htmlFor="password">Password:</label>
                     <div className="input-container">
-                        <input
+                        <input className="log-input"
                             placeholder="Password"
                             type="password"
                             id="password"
@@ -60,7 +60,7 @@ const LoginPage = () => {
                     </div>
                 </div>
 
-                <button type="submit">Login</button>
+                <button classname="login-buton" type="submit">Login</button>
 
                 <p className="register-txt">I do not have account</p>
                 <button className="register-button" type="submit">Register</button>
