@@ -1,5 +1,6 @@
 import './App.css';
 import CreateAccountPage from './pages/CreateAccountPage/CreateAccountPage';
+import WelcomePage from './pages/WelcomePage/WelcomePage';
 import { Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
