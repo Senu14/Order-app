@@ -15,11 +15,38 @@ const HomePage = () => {
     return (
         <>
           <div className="homepage">
-            <button >Add menu item<BiChevronRight/></button>
-            <button >Create order<BiChevronRight/></button>
-            <button >Shopping list<BiChevronRight/></button>
-            <button >Menu<BiChevronRight/></button>
-            <button >Contact us<BiChevronRight/></button>
+            <button >Add menu item
+              <div className="icon">
+                <BiChevronRight/>
+              </div>
+            </button>
+
+            <button >Create order
+              <div className="icon">
+                <BiChevronRight/>
+              </div>
+            </button>
+
+
+            <button >Shopping list
+              <div className="icon">
+                <BiChevronRight/>
+              </div>
+            </button>
+
+
+            <button >Menu
+              <div className="icon">
+                <BiChevronRight/>
+              </div>
+            </button>
+
+
+            <button >Contact us
+              <div className="icon">
+                <BiChevronRight/>
+              </div>
+             </button>
           </div>
         </>
     )
