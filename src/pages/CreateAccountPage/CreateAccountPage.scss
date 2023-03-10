@@ -1,18 +1,81 @@
-CreateAccountPage{
-   display: flex;  
-   flex-direction: column; 
-}
-form{
+
+body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     background-repeat: no-repeat;
+     font-family: 'Poppins', sans-serif;
+ 
+ 
+ }
+ h1{
+  text-align: center;
+  color: #3A180A;
+  text-transform: uppercase;
+  justify-content: center;
+  padding: 1px;
+  font-family: Century, 24;
+  font-weight: 100;
+  position: relative;
+  width: 80%;
+  
+ }
+ .container {
+     width: 60%;
+     padding: 100px;
+     border-radius: 4px;
      display: flex;
-     flex-direction: column;
-     gap: 5px;
-     width: 50%;
-     background: #E9C891
-}
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .container form {
+     background: #E9C891;
+     width: 35%;
+     max-width: 600px;
+     padding: 30px 30px 30px;
+     border-radius: 4px;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+     position: center;
+ }
+ 
+ /* all min inpute styles her */
+ .form-control {
+     width: 100%;
+     display: grid;
+     align-items: center;
+     margin: 10px 0;
+     position: relative;
+ }
+
 input{
    padding: 10px; 
    border: none;
    border-top-width: 2px;
    border-top-style: solid;
-   
 }
+
+form button { 
+     color: #fff;
+     border-radius: 4px;
+     cursor: pointer;
+     padding: 10px;
+     width: 30%;
+     color: #3A180A;
+     
+ }
+
+ @media (max-width: 800px) {
+    .container{
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     
+    } 
+    .form-control input,  .form-control textarea  {
+     width:100%;
+     margin: 0;
+     padding: 0;
+    }
+    
+ }
