@@ -1,6 +1,7 @@
 const db = require("../models");
 const User = db.user;
-const Op = db.Sequelize.Op;
+const Sequelize = require('sequelize');
+const Op = db.sequelize.Op;
 const utils = require("../utils");
 const  bcrypt  =  require('bcryptjs');
 
@@ -18,7 +19,9 @@ exports.create = (req, res) => {
   let user = {
     password: req.body.password,
     name: req.body.name,
-    email: req.body.email
+    username: req.body.username,
+    filename: req.file ? req.file.filename : ""
+
   };
 
   console.log(user)
@@ -95,7 +98,7 @@ exports.update = (req, res) => {
   console.log(req.body.CP)
   console.log(req.body.name)
 
-  console.log(req.body.email)
+  console.log(req.body.username)
 
 
   User.update(req.body, {
@@ -119,13 +122,13 @@ exports.update = (req, res) => {
     });
 };
 
-// FIND USER BY EMAIL AND PASSWORD
+// FIND USER BY username AND PASSWORD
 
-exports.findUserByEmailAndPassword = (req, res) => {
-  const email = req.body.email;
+exports.findUserByusernameAndPassword = (req, res) => {
+  const username = req.body.username;
   const pwd = req.body.password;
 
-  User.findOne({ where: { email: email, password: pwd } })
+  User.findOne({ where: { username: username, password: pwd } })
     .then(data => {
       res.send(data);
     })
@@ -133,6 +136,33 @@ exports.findUserByEmailAndPassword = (req, res) => {
       res.status(500).send({
         message:
           err.message || "Some error occurred while retrieving users."
+      });
+    });
+};
+
+
+
+// DELETE USER
+exports.delete = (req, res) => {
+  const id = req.params.id;
+
+  User.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "User was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete user with id=${id}. Maybe user was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete user with id=" + id
       });
     });
 };

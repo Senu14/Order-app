@@ -1,8 +1,9 @@
 const db = require("../models");
 const Ingredient = db.ingredient;
-const Op = db.Sequelize.Op;
+const Sequelize = require('sequelize');
+const Op = db.sequelize.Op;
 
-// CREATE RESTAURANT
+// CREATE INGREDIENT
 
 exports.create = (req, res) => {
     if (!req.body.name) {
@@ -15,7 +16,7 @@ exports.create = (req, res) => {
         name: req.body.name,
         dishId: req.body.dishId,
         amount: req.body.amount,
-        filename: req.file ? req.file.filename : ""
+        unit: req.body.unit
     }
 
     console.log(ingredient);
@@ -83,9 +84,9 @@ exports.update = (req, res) => {
         name: req.body.name,
         dishId: req.body.dishId,
         amount: req.body.amount,
-        filename: req.file ? req.file.filename : ""
+        unit: req.body.unit
     }
-}
+
 if (ingredient.filename == "") {
   Ingredient.findByPk(id)
     .then(data => {
@@ -138,10 +139,11 @@ if (ingredient.filename == "") {
       });
     });
 }
+}
 
-// FIND BY INGREDIENT ID
+// FIND BY DISH ID
 
-exports.findAllByIngredientId = (req, res) => {
+exports.findAllByDishId = (req, res) => {
     const id = req.params.id;
     console.log(req.params.id)
   

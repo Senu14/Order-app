@@ -1,19 +1,20 @@
 const db = require ("../models");
 const Dish = db.dish;
-const Op = db.Sequelize.Op;
+const Sequelize = require('sequelize');
+const Op = db.sequelize.Op;
+
 
 // CREATE DISH
 exports.create = (req, res) => {
-    if (!req.body.name) {
-        res.status(400).send({
-            message: "Content cannot be empty"
-        });
-    }
-}
+    // if (!req.body.name) {
+    //     res.status(400).send({
+    //         message: "Content cannot be empty"
+    //     });
+    // }
+
 
 const dish = { 
-    name: req.body.name,
-    amount: req.body.amount,
+    name: req.body.name
 }
 
 console.log(dish);
@@ -25,6 +26,7 @@ Dish.create(dish).then(data => {
         message: err.message || "Some error occurred while creating the dish"
     });
 });
+}
 
 
 // GET ALL DISHES
@@ -77,9 +79,7 @@ exports.findAll = (req, res) => {
   
     // Create a Dish
     const dish = {
-      name: req.body.name,
-      amount: req.body.amount,
-      filename: req.file ? req.file.filename : ""
+      name: req.body.name
     }
     if (dish.filename == "") {
       Dish.findByPk(id)

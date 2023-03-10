@@ -6,21 +6,21 @@ const db = require("../models");
 const User = db.user;
 
 exports.signin = (req, res) => {
-  let userEncoded = req.body.email;
+  let userEncoded = req.body.username;
   let buffUser = new Buffer(userEncoded, 'base64');
-  let email = buffUser.toString('ascii');
+  let username = buffUser.toString('ascii');
   let passwordEncoded = req.body.password;
   let buffPwd = new Buffer(passwordEncoded, 'base64');
   let pwd = buffPwd.toString('ascii');
 
-  if (!email || !pwd) {
+  if (!username || !pwd) {
     return res.status(400).json({
       error: true,
-      message: "Email or Password required."
+      message: "username or Password required."
     });
   }
 
-  User.findOne({ where: { email: email } })
+  User.findOne({ where: { username: username } })
     .then(data => {
       const result = bcrypt.compareSync(pwd, data.password);
       if(!result) return  res.status(401).send('Password not valid!');
