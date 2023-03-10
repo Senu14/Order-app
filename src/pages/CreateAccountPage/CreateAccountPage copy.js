@@ -8,13 +8,11 @@ const  CreateAccountPage = () => {
 
   return (
 <>
-
+<h1>Create an Account</h1>
     <div className ="container">
       
 
     <form onSubmit={handleSubmit(onsubmit)}>
-    <h1>Create an Account</h1>
-
 
     {/* <!-- Fulde Navn -->
     <!-- An element kan have more than one class, now we have two class -->
