@@ -5,8 +5,6 @@ import { Route, Router } from "react-router-dom";
 import './CreateOrderPage.scss';
 import { BiChevronRight} from "react-icons/bi";
 
-
-
 const CreateOrderPage = () => {
     return ( 
         <>
