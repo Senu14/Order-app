@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Route, Router } from "react-router-dom";
 import './CreateOrderPage.scss';
-import { BiChevronRight } from "react-icons/bi";
+import { BiChevronRight} from "react-icons/bi";
 import Header from "../../components/Header";
 
 

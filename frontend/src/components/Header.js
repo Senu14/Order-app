@@ -3,6 +3,8 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { BsPersonCircle } from 'react-icons/bs'
 import "./Header.css";
 
+
+
 function Header() {
   const navRef = useRef();
 
