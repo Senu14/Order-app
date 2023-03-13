@@ -1,34 +1,81 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./LoginPage.scss";
+import AuthService from "../../services/auth.service";
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  let navigate = useNavigate();
+  const form = useRef();
+  const checkBtn = useRef();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setUsernameError("");
     setPasswordError("");
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (username === "") {
-      setUsernameError("The email is required");
-    } else if (!emailRegex.test(username)) {
-      setUsernameError("Invalid email format");
+      setUsernameError("The username is required");
+
     }
 
     if (password === "") {
       setPasswordError("The password is required.");
     }
+
+    // Call the login function from the UserService
+    AuthService.login(username, password)
+      .then((response) => {
+        console.log(response);
+        // Handle successful login here
+      })
+      .catch((error) => {
+        console.log(error);
+        // Handle login error here
+      });
+    
+     const handleLogin = (e) => {
+    e.preventDefault();
+
+    setMessage("");
+    setLoading(true);
+
+    form.current.validateAll();
+
+    if (checkBtn.current.context._errors.length === 0) {
+      AuthService.login(username, password).then(
+        () => {
+          navigate("/CreateAccount");
+          window.location.reload();
+        },
+        (error) => {
+          const resMessage =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+
+          setLoading(false);
+          setMessage(resMessage);
+        }
+      );
+    } else {
+      setLoading(false);
+    }
+  };
   };
 
   return (
     <>
       <style>{'body {  background-color: #F4E9D6 }'}</style>
-      <h1 classname="logintext" style={{ textAlign: "center" }} className="txt">
+      <h1 className="logintext" style={{ textAlign: "center" }} >
         You are welcome!
       </h1>
       <img src="/images/logo.png" alt="Logo" className="img" />
@@ -36,7 +83,7 @@ const LoginPage = () => {
         <div className="input-wrapper">
           <input
             className="log-input"
-            placeholder="Email"
+            placeholder="Username"
             type="text"
             id="username"
             value={username}
@@ -57,7 +104,7 @@ const LoginPage = () => {
           {passwordError && <span className="error">{passwordError}</span>}
         </div>
 
-        <button classname="login-button" type="submit">
+        <button className="login-button" type="submit">
           Login
         </button>
 
