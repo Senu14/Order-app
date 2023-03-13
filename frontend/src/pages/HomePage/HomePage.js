@@ -13,7 +13,7 @@ const HomePage = () => {
 
 
     return (
-        <>
+        <div className="body-home">
           <div className="homepage">
             <button className="buttonhomepage">Add menu item
               <div className="icon">
@@ -48,7 +48,7 @@ const HomePage = () => {
               </div>
              </button>
           </div>
-        </>
+        </div>
     )
 }
 

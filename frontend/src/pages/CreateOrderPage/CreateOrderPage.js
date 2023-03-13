@@ -9,7 +9,7 @@ import { BiChevronRight} from "react-icons/bi";
 
 const CreateOrderPage = () => {
     return ( 
-        <>
+        <div className='body-create'>
           <p className="line">ORDER</p>
 
         <div className="days">
@@ -59,7 +59,7 @@ const CreateOrderPage = () => {
               </div>
            </button>
         </div>
-        </>
+        </div>
      );
 }
  
