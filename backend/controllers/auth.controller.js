@@ -6,12 +6,15 @@ const db = require("../models");
 const User = db.user;
 
 exports.signin = (req, res) => {
+  console.log("all data: ", req.body)
   let userEncoded = req.body.username;
-  let buffUser = new Buffer(userEncoded, 'base64');
-  let username = buffUser.toString('ascii');
+  let username = userEncoded;
+  // let buffUser = new Buffer(userEncoded, 'base64');
+  // let username = buffUser.toString('ascii');
   let passwordEncoded = req.body.password;
-  let buffPwd = new Buffer(passwordEncoded, 'base64');
-  let pwd = buffPwd.toString('ascii');
+  let pwd = passwordEncoded;
+  // let buffPwd = new Buffer(passwordEncoded, 'base64');
+  // let pwd = buffPwd.toString('ascii');
 
   if (!username || !pwd) {
     return res.status(400).json({
