@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./LoginPage.scss";
 import AuthService from "../../services/auth.service";
 import { useNavigate } from 'react-router-dom';
@@ -19,36 +19,21 @@ const LoginPage = () => {
     setUsernameError("");
     setPasswordError("");
 
-
     if (username === "") {
       setUsernameError("The username is required");
-
     }
 
     if (password === "") {
       setPasswordError("The password is required.");
     }
 
-    // Call the login function from the UserService
-    AuthService.login(username, password)
-      .then((response) => {
-        console.log(response);
-        // Handle successful login here
-      })
-      .catch((error) => {
-        console.log(error);
-        // Handle login error here
-      });
-    
-     const handleLogin = (e) => {
-    e.preventDefault();
+    // console.log("username: ", username);
+    // console.log("password: ", password);
 
     setMessage("");
     setLoading(true);
 
-    form.current.validateAll();
-
-    if (checkBtn.current.context._errors.length === 0) {
+    // if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
           navigate("/CreateAccount");
@@ -66,11 +51,11 @@ const LoginPage = () => {
           setMessage(resMessage);
         }
       );
-    } else {
-      setLoading(false);
-    }
+    // } else {
+    //   setLoading(false);
+    // }
   };
-  };
+
 
   return (
     <>
