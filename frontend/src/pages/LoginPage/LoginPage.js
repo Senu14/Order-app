@@ -36,7 +36,7 @@ const LoginPage = () => {
     // if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
-          navigate("/CreateAccount");
+          navigate("/HomePage");
           window.location.reload();
         },
         (error) => {
@@ -94,7 +94,7 @@ const LoginPage = () => {
         </button>
 
         <p className="register-txt">I do not have account</p>
-        <button className="register-button" type="submit">
+        <button className="register-button" type="submit"onClick={() => navigate('/CreateAccount')}>
           Register
         </button>
       </form>

@@ -5,12 +5,7 @@ import { Route, Router } from "react-router-dom";
 import './HomePage.scss';
 import { BiChevronRight} from "react-icons/bi";
 
-
-
 const HomePage = () => {
-
-
-
 
     return (
         <>
