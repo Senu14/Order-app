@@ -8,7 +8,7 @@ import AddMenuPage from './pages/AddMenuPage/AddmenuPage';
 import HomePage from './pages/HomePage/HomePage';
 import ShoppingListPage from './pages/ShoppingListPage/ShoppingListPage';
 import CreateOrderPage from './pages/CreateOrderPage/CreateOrderPage';
-import AddMenuPage from './pages/AddMenuPage/AddmenuPage';
+
 function App() {
   return (
     <>
@@ -19,8 +19,7 @@ function App() {
     <Route path="/AddMenuPage" element={<AddMenuPage />} />       
     <Route path="/ProfilePage" element={<ProfilePage />} />  
     <Route path="/HomePage" element={<HomePage />} />
-    <Route path="/CreateOrderPage" element={<CreateOrderPage />} /> 
-     <Route path="/AddMenuPage" element={<AddMenuPage />} />        
+    <Route path="/CreateOrderPage" element={<CreateOrderPage />} />       
      <Route path="/ShoppingListPage" element={<ShoppingListPage />} />  
      <Route path="/WelcomePage" element={<WelcomePage />} />          
     </Routes>
