@@ -13,7 +13,7 @@ const  CreateAccountPage = () => {
       
 
     <form onSubmit={handleSubmit(onsubmit)}>
-    <h1>Create an Account</h1>
+    <h1 className='title'>Create an Account</h1>
 
 
     {/* <!-- Fulde Navn -->
@@ -21,7 +21,7 @@ const  CreateAccountPage = () => {
     <!-- always the right side class take place, the one you write last --> */}
        <div className="form-control "> 
             <label for="firstname">Name</label>
-            <input {...register('name',{required:true})}/>
+            <input className='space' {...register('name',{required:true})}/>
 
             {errors.name && <span>write your full name</span>}
             {/* <input type="text" name="firstname" id="firstname" placeholder="write your name" class="inp-error"></input>  */}
@@ -29,7 +29,7 @@ const  CreateAccountPage = () => {
         </div>
         <div className="form-control "> 
             <label for="email">Email</label>
-            <input {...register('email',{required:true})}/>
+            <input className='space' {...register('email',{required:true})}/>
 
             {errors.email && <span>write your email</span>}
             {/* <input type="text" name="firstname" id="firstname" placeholder="write your name" class="inp-error"></input>  */}
@@ -37,7 +37,7 @@ const  CreateAccountPage = () => {
         </div>
         <div className="form-control "> 
             <label for="pasword">Password</label>
-            <input {...register('password',{required:true})}/>
+            <input className='space' {...register('password',{required:true})}/>
 
             {errors.password && <span>write your password</span>}
             {/* <input type="text" name="firstname" id="firstname" placeholder="write your name" class="inp-error"></input>  */}
@@ -46,7 +46,7 @@ const  CreateAccountPage = () => {
 
 
         <div>
-        <button type="submit" >Register</button>
+        <button className='last' type="submit" >Register</button>
         </div>
 
     </form>

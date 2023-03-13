@@ -1,5 +1,6 @@
 import React from 'react';
-import { useForm } from 'react-hook-dom';
+import { useForm } from 'react-hook-form';
+import "./ContactPages.scss"
 
 const ContactPages = ()=> {
      const { register, handleSubmit, formState: { errors } } = useForm();
@@ -10,20 +11,21 @@ const ContactPages = ()=> {
 
 <div className="container">
 
-<form>
+<form onSubmit={handleSubmit(onsubmit)}>
+    <h1 className='contact'>Contact us</h1>
 
 
 
    <div className="form-control "> 
         <label for="firstname">Name</label>
-        <input {...register('name',{required:true})}/>
+        <input className='work'{...register('name',{required:true})}/>
         {errors.name && <span>write your full name</span>}
          
     </div>
 
     <div className="form-control">
         <label for="email">Email</label>
-        <input {...register('email',{required:true})}/>
+        <input className='work' {...register('email',{required:true})}/>
         {errors.email && <span>write your email</span>}
    
     </div>
@@ -34,7 +36,7 @@ const ContactPages = ()=> {
     </div>
     
     <div>
-    <button type="button">Send</button>
+    <button  className= "call" type="button">Send</button>
     </div>
 
 </form>
